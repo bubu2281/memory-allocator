@@ -1,0 +1,50 @@
+cd .. && checkpatch.pl -f src/*.c tests/snippets/*.c
+/bin/sh: 1: checkpatch.pl: not found
+make: [Makefile:37: lint] Error 127 (ignored)
+cd .. && checkpatch.pl -f checker/*.sh tests/*.sh
+/bin/sh: 1: checkpatch.pl: not found
+make: [Makefile:38: lint] Error 127 (ignored)
+cd .. && cpplint --recursive src/ tests/
+Done processing src/osmem.c
+Done processing tests/snippets/test-all.c
+Done processing tests/snippets/test-calloc-arrays.c
+Done processing tests/snippets/test-calloc-block-reuse.c
+Done processing tests/snippets/test-calloc-coalesce-big.c
+Done processing tests/snippets/test-calloc-coalesce.c
+Done processing tests/snippets/test-calloc-expand-block.c
+Done processing tests/snippets/test-calloc-no-preallocate.c
+Done processing tests/snippets/test-calloc-no-split.c
+Done processing tests/snippets/test-calloc-preallocate.c
+Done processing tests/snippets/test-calloc-split-first.c
+Done processing tests/snippets/test-calloc-split-last.c
+Done processing tests/snippets/test-calloc-split-middle.c
+Done processing tests/snippets/test-calloc-split-one-block.c
+Done processing tests/snippets/test-calloc-split-vector.c
+Done processing tests/snippets/test-malloc-arrays.c
+Done processing tests/snippets/test-malloc-block-reuse.c
+Done processing tests/snippets/test-malloc-coalesce-big.c
+Done processing tests/snippets/test-malloc-coalesce.c
+Done processing tests/snippets/test-malloc-expand-block.c
+Done processing tests/snippets/test-malloc-no-preallocate.c
+Done processing tests/snippets/test-malloc-no-split.c
+Done processing tests/snippets/test-malloc-preallocate.c
+Done processing tests/snippets/test-malloc-split-first.c
+Done processing tests/snippets/test-malloc-split-last.c
+Done processing tests/snippets/test-malloc-split-middle.c
+Done processing tests/snippets/test-malloc-split-one-block.c
+Done processing tests/snippets/test-malloc-split-vector.c
+Done processing tests/snippets/test-realloc-arrays.c
+Done processing tests/snippets/test-realloc-block-reuse.c
+Done processing tests/snippets/test-realloc-coalesce-big.c
+Done processing tests/snippets/test-realloc-coalesce.c
+Done processing tests/snippets/test-realloc-expand-block.c
+Done processing tests/snippets/test-realloc-no-preallocate.c
+Done processing tests/snippets/test-realloc-no-split.c
+Done processing tests/snippets/test-realloc-preallocate.c
+Done processing tests/snippets/test-realloc-split-first.c
+Done processing tests/snippets/test-realloc-split-last.c
+Done processing tests/snippets/test-realloc-split-middle.c
+Done processing tests/snippets/test-realloc-split-one-block.c
+Done processing tests/snippets/test-realloc-split-vector.c
+Done processing tests/snippets/test-utils.h
+cd .. && shellcheck checker/*.sh tests/*.sh

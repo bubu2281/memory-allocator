@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "README": "markdown",
+        "printf.h": "c",
+        "block_meta.h": "c",
+        "osmem.h": "c",
+        "mman.h": "c",
+        "unistd.h": "c",
+        "errno.h": "c",
+        "string.h": "c",
+        "test-utils.h": "c"
+    }
+}

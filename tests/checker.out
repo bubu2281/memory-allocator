@@ -1,0 +1,92 @@
+make clean_src clean_snippets src snippets
+make[1]: Entering directory '/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/tests'
+make -C /mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src clean
+make[2]: Entering directory '/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src'
+rm -f ../src.zip
+rm -f libosmem.so
+rm -f osmem.o /mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils/printf.o
+make[2]: Leaving directory '/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src'
+rm -rf snippets/test-all snippets/test-calloc-arrays snippets/test-calloc-block-reuse snippets/test-calloc-coalesce-big snippets/test-calloc-coalesce snippets/test-calloc-expand-block snippets/test-calloc-no-preallocate snippets/test-calloc-no-split snippets/test-calloc-preallocate snippets/test-calloc-split-first snippets/test-calloc-split-last snippets/test-calloc-split-middle snippets/test-calloc-split-one-block snippets/test-calloc-split-vector snippets/test-malloc-arrays snippets/test-malloc-block-reuse snippets/test-malloc-coalesce-big snippets/test-malloc-coalesce snippets/test-malloc-expand-block snippets/test-malloc-no-preallocate snippets/test-malloc-no-split snippets/test-malloc-preallocate snippets/test-malloc-split-first snippets/test-malloc-split-last snippets/test-malloc-split-middle snippets/test-malloc-split-one-block snippets/test-malloc-split-vector snippets/test-realloc-arrays snippets/test-realloc-block-reuse snippets/test-realloc-coalesce-big snippets/test-realloc-coalesce snippets/test-realloc-expand-block snippets/test-realloc-no-preallocate snippets/test-realloc-no-split snippets/test-realloc-preallocate snippets/test-realloc-split-first snippets/test-realloc-split-last snippets/test-realloc-split-middle snippets/test-realloc-split-one-block snippets/test-realloc-split-vector
+make -C /mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src
+make[2]: Entering directory '/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src'
+gcc -fPIC -Wall -Wextra -g -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils  -c -o osmem.o osmem.c
+osmem.c: In function ‘os_malloc’:
+osmem.c:5:24: warning: unused parameter ‘size’ [-Wunused-parameter]
+    5 | void *os_malloc(size_t size)
+      |                 ~~~~~~~^~~~
+osmem.c: In function ‘os_free’:
+osmem.c:11:20: warning: unused parameter ‘ptr’ [-Wunused-parameter]
+   11 | void os_free(void *ptr)
+      |              ~~~~~~^~~
+osmem.c: In function ‘os_calloc’:
+osmem.c:16:24: warning: unused parameter ‘nmemb’ [-Wunused-parameter]
+   16 | void *os_calloc(size_t nmemb, size_t size)
+      |                 ~~~~~~~^~~~~
+osmem.c:16:38: warning: unused parameter ‘size’ [-Wunused-parameter]
+   16 | void *os_calloc(size_t nmemb, size_t size)
+      |                               ~~~~~~~^~~~
+osmem.c: In function ‘os_realloc’:
+osmem.c:22:24: warning: unused parameter ‘ptr’ [-Wunused-parameter]
+   22 | void *os_realloc(void *ptr, size_t size)
+      |                  ~~~~~~^~~
+osmem.c:22:36: warning: unused parameter ‘size’ [-Wunused-parameter]
+   22 | void *os_realloc(void *ptr, size_t size)
+      |                             ~~~~~~~^~~~
+gcc -fPIC -Wall -Wextra -g -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils  -c -o /mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils/printf.o /mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils/printf.c
+gcc -shared -o libosmem.so osmem.o /mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils/printf.o
+make[2]: Leaving directory '/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src'
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-all snippets/test-all.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-arrays snippets/test-calloc-arrays.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-block-reuse snippets/test-calloc-block-reuse.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-coalesce-big snippets/test-calloc-coalesce-big.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-coalesce snippets/test-calloc-coalesce.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-expand-block snippets/test-calloc-expand-block.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-no-preallocate snippets/test-calloc-no-preallocate.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-no-split snippets/test-calloc-no-split.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-preallocate snippets/test-calloc-preallocate.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-first snippets/test-calloc-split-first.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-last snippets/test-calloc-split-last.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-middle snippets/test-calloc-split-middle.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-one-block snippets/test-calloc-split-one-block.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-vector snippets/test-calloc-split-vector.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-arrays snippets/test-malloc-arrays.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-block-reuse snippets/test-malloc-block-reuse.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-coalesce-big snippets/test-malloc-coalesce-big.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-coalesce snippets/test-malloc-coalesce.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-expand-block snippets/test-malloc-expand-block.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-no-preallocate snippets/test-malloc-no-preallocate.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-no-split snippets/test-malloc-no-split.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-preallocate snippets/test-malloc-preallocate.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-first snippets/test-malloc-split-first.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-last snippets/test-malloc-split-last.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-middle snippets/test-malloc-split-middle.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-one-block snippets/test-malloc-split-one-block.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-vector snippets/test-malloc-split-vector.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-arrays snippets/test-realloc-arrays.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-block-reuse snippets/test-realloc-block-reuse.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-coalesce-big snippets/test-realloc-coalesce-big.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-coalesce snippets/test-realloc-coalesce.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-expand-block snippets/test-realloc-expand-block.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-no-preallocate snippets/test-realloc-no-preallocate.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-no-split snippets/test-realloc-no-split.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-preallocate snippets/test-realloc-preallocate.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-first snippets/test-realloc-split-first.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-last snippets/test-realloc-split-last.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-middle snippets/test-realloc-split-middle.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-one-block snippets/test-realloc-split-one-block.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+gcc -I/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-vector snippets/test-realloc-split-vector.c -L/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/src -losmem
+make[1]: Leaving directory '/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/tests'
+python3 run_tests.py
+test-malloc-no-preallocate       ........................Traceback (most recent call last):
+  File "/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/tests/run_tests.py", line 480, in <module>
+    main()
+  File "/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/tests/run_tests.py", line 472, in main
+    test.run()
+  File "/mnt/c/Users/Bubu/Desktop/SO/Tema2/assignment-memory-allocator/tests/run_tests.py", line 318, in run
+    with Popen(
+  File "/usr/lib/python3.10/subprocess.py", line 969, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.10/subprocess.py", line 1845, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'ltrace'
+make: *** [Makefile:30: check] Error 1
